@@ -1,0 +1,3 @@
+D:/course/C++/sdlEffect/cmake-build-debug/CMakeFiles/sdlSetup.dir
+D:/course/C++/sdlEffect/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/course/C++/sdlEffect/cmake-build-debug/CMakeFiles/rebuild_cache.dir

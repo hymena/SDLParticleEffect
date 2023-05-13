@@ -1,0 +1,7 @@
+# ninja log v5
+8	1321	7056931245729396	CMakeFiles/sdlSetup.dir/main.cpp.obj	be2ed2d8eab1d52b
+1321	1561	7056931248069806	sdlSetup.exe	75fba3875116e4bd
+0	10	0	clean	a84090cb4edd80de
+0	10	0	clean	a84090cb4edd80de
+3	905	7056932139578122	CMakeFiles/sdlSetup.dir/main.cpp.obj	be2ed2d8eab1d52b
+906	1144	7056932141935366	sdlSetup.exe	75fba3875116e4bd
