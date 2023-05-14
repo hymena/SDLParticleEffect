@@ -56,6 +56,13 @@ build CMakeFiles/sdlSetup.dir/main.cpp.obj: CXX_COMPILER__sdlSetup_Debug D$:/cou
   OBJECT_DIR = CMakeFiles\sdlSetup.dir
   OBJECT_FILE_DIR = CMakeFiles\sdlSetup.dir
 
+build CMakeFiles/sdlSetup.dir/Screen.cpp.obj: CXX_COMPILER__sdlSetup_Debug D$:/course/C++/sdlEffect/Screen.cpp || cmake_object_order_depends_target_sdlSetup
+  DEP_FILE = CMakeFiles\sdlSetup.dir\Screen.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/libs/SDL2-2.26.5/include
+  OBJECT_DIR = CMakeFiles\sdlSetup.dir
+  OBJECT_FILE_DIR = CMakeFiles\sdlSetup.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target sdlSetup
@@ -64,7 +71,7 @@ build CMakeFiles/sdlSetup.dir/main.cpp.obj: CXX_COMPILER__sdlSetup_Debug D$:/cou
 #############################################
 # Link the executable sdlSetup.exe
 
-build sdlSetup.exe: CXX_EXECUTABLE_LINKER__sdlSetup_Debug CMakeFiles/sdlSetup.dir/main.cpp.obj
+build sdlSetup.exe: CXX_EXECUTABLE_LINKER__sdlSetup_Debug CMakeFiles/sdlSetup.dir/main.cpp.obj CMakeFiles/sdlSetup.dir/Screen.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lSDL2main  -lSDL2  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LD:/libs/SDL2-2.26.5/lib/x64
