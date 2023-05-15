@@ -35,19 +35,9 @@ namespace farukprogramming{
             return false;
         }
 
-        Uint32 *buffer = new Uint32[SCREEN_HEIGHT*SCREEN_WIDTH];
+        m_buffer = new Uint32[SCREEN_HEIGHT*SCREEN_WIDTH]; // allocating space for buffer
+        memset(m_buffer,0,SCREEN_WIDTH*SCREEN_HEIGHT*sizeof(Uint32)); // filling the buffer with 0
 
-        memset(buffer,0,SCREEN_WIDTH*SCREEN_HEIGHT*sizeof(Uint32));
-
-        for(int i=0; i<SCREEN_WIDTH*SCREEN_HEIGHT;i++)
-        {
-            buffer[i] = 0x0080FFFF;
-        }
-
-        SDL_UpdateTexture(m_texture,NULL,buffer,SCREEN_WIDTH* sizeof(Uint32));
-        SDL_RenderClear(m_renderer);
-        SDL_RenderCopy(m_renderer,m_texture,NULL,NULL);
-        SDL_RenderPresent(m_renderer);
 
         return true;
     }
@@ -67,5 +57,25 @@ namespace farukprogramming{
             }
         }
         return true;
+    }
+
+    void Screen::update() {
+        SDL_UpdateTexture(m_texture,NULL,m_buffer,SCREEN_WIDTH* sizeof(Uint32));
+        SDL_RenderClear(m_renderer);
+        SDL_RenderCopy(m_renderer,m_texture,NULL,NULL);
+        SDL_RenderPresent(m_renderer);
+    }
+
+    void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {
+        Uint32 color = 0;
+        color += red;
+        color <<= 8; // bit shift operator to shift the bits 1 byte left
+        color += green;
+        color <<= 8;
+        color += blue;
+        color <<= 8;
+        color += 0xFF; // constant alpha value is added for each pixel
+
+        m_buffer[(y*SCREEN_WIDTH)+x] = color;
     }
 }
