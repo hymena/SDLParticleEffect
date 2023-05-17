@@ -67,6 +67,9 @@ namespace farukprogramming{
     }
 
     void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {
+
+        if(x<0 || x>= SCREEN_WIDTH || y<0 ||y>= SCREEN_HEIGHT){ return;}
+
         Uint32 color = 0;
         color += red;
         color <<= 8; // bit shift operator to shift the bits 1 byte left
@@ -77,5 +80,9 @@ namespace farukprogramming{
         color += 0xFF; // constant alpha value is added for each pixel
 
         m_buffer[(y*SCREEN_WIDTH)+x] = color;
+    }
+
+    void Screen::clear() {
+        memset(m_buffer,0,SCREEN_WIDTH*SCREEN_HEIGHT*sizeof(Uint32)); // filling the buffer with 0
     }
 }
